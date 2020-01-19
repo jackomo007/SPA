@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card text-white bg-dark">
+                <div class="card-header" style="color: #a872c5;">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body  gradient">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -58,7 +58,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link text-white" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

@@ -1,42 +1,42 @@
 <template>
   <div>
     <form @submit.prevent="editarNota(nota)" v-if="modoEditar">
-      <h3>Editar nota</h3>
+      <h3 style="color: rgb(6, 39, 234);">Editar nota</h3>
       <input
         type="text"
         class="form-control mb-2"
         placeholder="Nombre de la nota"
         v-model="nota.nombre"
-      >
+      />
       <input
         type="text"
         class="form-control mb-2"
         placeholder="Descripción de la nota"
         v-model="nota.descripcion"
-      >
+      />
       <button class="btn btn-warning" type="submit">Editar</button>
       <button class="btn btn-danger" type="submit" @click="cancelarEdicion">Cancelar</button>
     </form>
     <form @submit.prevent="agregar" v-else>
-      <h3>Agregar nota</h3>
+      <h3 style="color: rgb(6, 39, 234);">Agregar nota</h3>
       <input
         type="text"
         class="form-control mb-2"
         placeholder="Nombre de la nota"
         v-model="nota.nombre"
-      >
+      />
       <input
         type="text"
         class="form-control mb-2"
         placeholder="Descripción de la nota"
         v-model="nota.descripcion"
-      >
+      />
       <button class="btn btn-primary" type="submit">Agregar</button>
     </form>
-    <hr>
-    <h3>Lista de notas:</h3>
+    <hr />
+    <h3 style="color: rgb(6, 39, 234);">Lista de notas:</h3>
     <ul class="list-group">
-      <li class="list-group-item" v-for="(item, index) in notas" :key="index">
+      <li class="list-group-item bg-dark" v-for="(item, index) in notas" :key="index">
         <span class="badge badge-primary float-right">{{item.updated_at}}</span>
         <p>{{item.nombre}}</p>
         <p>{{item.descripcion}}</p>

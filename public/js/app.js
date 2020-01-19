@@ -1713,9 +1713,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log("Component mounted.");
   }
 });
 
@@ -37169,14 +37174,25 @@ var staticRenderFns = [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
+            _c(
+              "div",
+              {
+                staticClass: "card-header bg-dark",
+                staticStyle: { color: "#ffb900" }
+              },
+              [_vm._v("SPA con Vue & Laravel")]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    Componente de ejemplo\n                "
-              )
+            _c("div", { staticClass: "card-body gradient" }, [
+              _c("img", {
+                attrs: {
+                  src:
+                    "https://res.cloudinary.com/dvm6sgg1h/image/upload/v1579397885/ipalo7abswainxpebxki.png",
+                  width: "100%",
+                  height: "100%",
+                  alt: "jeal.code47@gmail.com"
+                }
+              })
             ])
           ])
         ])
@@ -37218,7 +37234,9 @@ var render = function() {
             }
           },
           [
-            _c("h3", [_vm._v("Editar nota")]),
+            _c("h3", { staticStyle: { color: "rgb(6, 39, 234)" } }, [
+              _vm._v("Editar nota")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -37292,7 +37310,9 @@ var render = function() {
             }
           },
           [
-            _c("h3", [_vm._v("Agregar nota")]),
+            _c("h3", { staticStyle: { color: "rgb(6, 39, 234)" } }, [
+              _vm._v("Agregar nota")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -37348,49 +37368,55 @@ var render = function() {
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
-    _c("h3", [_vm._v("Lista de notas:")]),
+    _c("h3", { staticStyle: { color: "rgb(6, 39, 234)" } }, [
+      _vm._v("Lista de notas:")
+    ]),
     _vm._v(" "),
     _c(
       "ul",
       { staticClass: "list-group" },
       _vm._l(_vm.notas, function(item, index) {
-        return _c("li", { key: index, staticClass: "list-group-item" }, [
-          _c("span", { staticClass: "badge badge-primary float-right" }, [
-            _vm._v(_vm._s(item.updated_at))
-          ]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(item.nombre))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(item.descripcion))]),
-          _vm._v(" "),
-          _c("p", [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-warning btn-sm",
-                on: {
-                  click: function($event) {
-                    return _vm.editarFormulario(item)
-                  }
-                }
-              },
-              [_vm._v("Editar")]
-            ),
+        return _c(
+          "li",
+          { key: index, staticClass: "list-group-item bg-dark" },
+          [
+            _c("span", { staticClass: "badge badge-primary float-right" }, [
+              _vm._v(_vm._s(item.updated_at))
+            ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger btn-sm",
-                on: {
-                  click: function($event) {
-                    return _vm.eliminarNota(item, index)
+            _c("p", [_vm._v(_vm._s(item.nombre))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(item.descripcion))]),
+            _vm._v(" "),
+            _c("p", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-warning btn-sm",
+                  on: {
+                    click: function($event) {
+                      return _vm.editarFormulario(item)
+                    }
                   }
-                }
-              },
-              [_vm._v("Eliminar")]
-            )
-          ])
-        ])
+                },
+                [_vm._v("Editar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger btn-sm",
+                  on: {
+                    click: function($event) {
+                      return _vm.eliminarNota(item, index)
+                    }
+                  }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
+          ]
+        )
       }),
       0
     )
